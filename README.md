@@ -6,7 +6,7 @@ In this Project I try to find the direction of arrival of static speakers and mi
 # Time Difference of Arrival (TDOA) + MVDR Beamforming for Multi-Speaker Audio Enhancement
 
 **Niloofar Jazaeri** — University of Ottawa (Fall 2024)  
-[Paper (PDF)](paper/report.pdf) · [Notebook](MVDR_Beamforming_Beampattern_ImpuleResponse.ipynb) · [Results](results/) · [MATLAB denoising](matlab/)
+[Paper (PDF)](paper/report.pdf) · [Notebook](notebook/MVDR_Beamforming_Beampattern_ImpuleResponse.ipynb) · [Results](results/) · [MATLAB denoising](matlab/)
 
 <p align="center">
   <img src="paper/figures/Fig1 TDOA analysis between mixture1 and 3.png" width="48%" />
