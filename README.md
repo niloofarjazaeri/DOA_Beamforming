@@ -43,17 +43,18 @@ Then convert \(\Delta t\) to angle \(\theta\) (array geometry dependent).
 
 ### 2) MVDR Beamforming
 Steering vector for DOA \(\theta\):
-<img src="https://render.githubusercontent.com/render/math?math=a(%5Ctheta)%20%3D%20%5B%20e%5E%7B-j%5Comega%5Ctau_1(%5Ctheta)%7D%2C%20e%5E%7B-j%5Comega%5Ctau_2(%5Ctheta)%7D%2C%20e%5E%7B-j%5Comega%5Ctau_3(%5Ctheta)%7D%20%5D%5ET">
+Steering vector:
+a(θ) = [exp(-j ω τ1(θ)), exp(-j ω τ2(θ)), exp(-j ω τ3(θ))]^T
 
 MVDR weights:
-\[
-w_{\text{MVDR}} = \frac{R^{-1} a(\theta_0)}{a(\theta_0)^H R^{-1} a(\theta_0)}
-\]
+w = (R^-1 a) / (a^H R^-1 a)
+
+MVDR weights:
+w_MVDR = inv(R) * a(theta0) / (a(theta0)^H * inv(R) * a(theta0))
 
 Beamformed output:
-\[
-y(t) = w^H x(t)
-\]
+y(t) = (w^H) * x(t)
+
 
 ---
 
