@@ -1,6 +1,11 @@
 # DOA_Beamforming
-In this Project I try to find the direction of arrival of static speakers and michrophone array of 3, to solitude one source and make it audible.
 
+In real recordings (meetings, call centers, smart devices), multiple people often talk at the same time, so each microphone captures a **mixture** rather than a clean voice.  
+This project tackles the **source separation** problem in a simple but realistic setup: **3 microphones** record **3 static speakers**, and the goal is to make **one target speaker** dominant and suppress the others.
+
+From a data-science perspective, you can think of this as:  
+- estimating a latent variable (**direction/angle of each speaker**) from multichannel signals, then  
+- applying a constrained optimization filter (**MVDR beamformer**) that preserves the target while minimizing interference power.
 
 
 # Time Difference of Arrival (TDOA) + MVDR Beamforming for Multi-Speaker Audio Enhancement
@@ -14,7 +19,7 @@ In this Project I try to find the direction of arrival of static speakers and mi
   <img src="paper/figures/Fig 4 Rectangular beampattern, first for set2.png" width="48%" />
 </p>
 
-> **Goal:** Isolate a target speaker in a **3-microphone / 3-speaker** mixture using **TDOA/DOA estimation** (GCC-PHAT + cross-correlation) and **MVDR beamforming**, followed by **post-denoising** (MMSE-STSA 85, V_SpecSub).
+>  **Goal:** Given 3 microphone recordings containing 3 speakers, estimate each speaker’s **direction of arrival (DOA)** via **TDOA** (cross-correlation + GCC-PHAT), then apply an **MVDR beamformer** to preserve the target direction while minimizing output power (interference + noise), followed by denoising (MMSE-STSA 85, V_SpecSub).
 
 ---
 
@@ -38,9 +43,7 @@ Then convert \(\Delta t\) to angle \(\theta\) (array geometry dependent).
 
 ### 2) MVDR Beamforming
 Steering vector for DOA \(\theta\):
-\[
-a(\theta) = [e^{-j\omega\tau_1(\theta)},\; e^{-j\omega\tau_2(\theta)},\; e^{-j\omega\tau_3(\theta)}]^T
-\]
+<img src="https://render.githubusercontent.com/render/math?math=a(%5Ctheta)%20%3D%20%5B%20e%5E%7B-j%5Comega%5Ctau_1(%5Ctheta)%7D%2C%20e%5E%7B-j%5Comega%5Ctau_2(%5Ctheta)%7D%2C%20e%5E%7B-j%5Comega%5Ctau_3(%5Ctheta)%7D%20%5D%5ET">
 
 MVDR weights:
 \[
@@ -66,10 +69,6 @@ y(t) = w^H x(t)
 
 ---
 
-## Quickstart
-
-### Option A — Run the notebook
-```bash
-conda env create -f environment.yml
-conda activate tdoa-mvdr
-jupyter notebook notebooks/tdoa_mvdr_beamforming.ipynb
+## References
+- Chao Pan, Jingdong Chen, Jacob Benesty, **“Performance Study of the MVDR Beamformer as a Function of the Source Incidence Angle,”**
+  *IEEE/ACM Transactions on Audio, Speech, and Language Processing*, 22(1):67–79, 2014. DOI: 10.1109/TASL.2013.2283104. :contentReference[oaicite:0]{index=0}
