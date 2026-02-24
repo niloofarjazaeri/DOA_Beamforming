@@ -9,8 +9,9 @@ In this Project I try to find the direction of arrival of static speakers and mi
 [Paper (PDF)](paper/report.pdf) · [Notebook](notebooks/tdoa_mvdr_beamforming.ipynb) · [Results](results/) · [MATLAB denoising](matlab/)
 
 <p align="center">
-  <img src="paper/figures/beam_pattern_polar_set2.png" width="48%" />
-  <img src="paper/figures/beam_pattern_rect_set2.png" width="48%" />
+  <img src="paper/figures/Fig1 TDOA analysis between mixture1 and 3.png" width="48%" />
+  <img src="paper/figures/Fig3 beampattern set1 angles 60 and 150 and gain 1 and  0.png" width="48%" />
+  <img src="paper/figures/Fig 4 Rectangular beampattern, first for set2.png" width="48%" />
 </p>
 
 > **Goal:** Isolate a target speaker in a **3-microphone / 3-speaker** mixture using **TDOA/DOA estimation** (GCC-PHAT + cross-correlation) and **MVDR beamforming**, followed by **post-denoising** (MMSE-STSA 85, V_SpecSub).
