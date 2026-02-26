@@ -14,6 +14,7 @@ From a data-science perspective, you can think of this as:
 [Paper (PDF)](paper/report/report.pdf) · [Notebook](notebook/MVDR_Beamforming_Beampattern_ImpuleResponse.ipynb) · [Results](results/) · [MATLAB denoising](matlab/)
 
 <p align="center">
+  <img src="paper/figures/abstract.png" width="48%" />
   <img src="paper/figures/Fig1 TDOA analysis between mixture1 and 3.png" width="48%" />
   <img src="paper/figures/Fig3 beampattern set1 angles 60 and 150 and gain 1 and  0.png" width="48%" />
   <img src="paper/figures/Fig 4 Rectangular beampattern, first for set2.png" width="48%" />
